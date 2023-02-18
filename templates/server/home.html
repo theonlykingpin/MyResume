@@ -1,0 +1,280 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reza Rohani - Online Resume</title>
+    <link rel="shortcut icon" type="image/ico" href="{% static "favicon/favicon.ico" %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+    <link rel="preload" as="style"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap"/>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap"
+          media="print" onload="this.media='all'"/>
+    <noscript>
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap"/>
+    </noscript>
+    <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome/css/all.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+{#  <link rel="stylesheet" type="text/css" href="{% static "css/aos.css" %}">#}
+    <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
+    <noscript>
+        <style type="text/css">
+            [data-aos] {
+                opacity: 1 !important;
+                transform: translate(0) scale(1) !important;
+            }
+        </style>
+    </noscript>
+</head>
+<body id="top">
+<header class="d-print-none">
+    <div class="container text-center text-lg-left">
+        <div class="py-2 clearfix">
+        </div>
+    </div>
+</header>
+<div class="page-content">
+    <div class="container">
+        <div class="cover shadow-lg bg-white">
+            <div class="cover-bg p-3 p-lg-4 text-white">
+                <div class="row">
+                    <div class="col-lg-4 col-md-5" data-aos="fade" data-aos-delay="100">
+                        <div class="avatar hover-effect bg-white shadow-sm "><img src="{{ information.picture }}"
+                                                                                  width="180" height="210"
+                                                                                  alt="Smiley face"/></div>
+                    </div>
+                    <div class="col-lg-8 col-md-7 text-center text-md-start">
+                        <h2 class="h1 mt-2" data-aos="fade" data-aos-delay="300">{{ information.full_name }}</h2>
+                        <p data-aos="fade" data-aos-delay="300">{{ information.title }}</p>
+                            <div class="d-print-none" data-aos="fade" data-aos-delay="300">
+                                <a href="{% url "server:resume" %}" class="btn btn-warning mt-1 me-1">مشاهده رزومه فارسی</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-section pt-4 px-3 px-lg-4 mt-1">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="h3 mb-2" data-aos="fade" data-aos-delay="500">About Me</h2>
+                        <p data-aos="fade" data-aos-delay="500">{{ information.about }}</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="d-print-none"/>
+            <div class="skills-section px-3 px-lg-4">
+                <h2 class="h3 mb-3" data-aos="fade" data-aos-delay="900">Some Professional Skills</h2>
+                <div class="row" data-aos="fade" data-aos-delay="900">
+                    <div class="col-md-6">
+                        <div class="mb-2"><span>Python</span>
+                            <div class="progress my-1">
+                                <div class="progress-bar bg-primary" role="progressbar" data-aos="fade-right"
+                                     data-aos-delay="1300" data-aos-anchor=".skills-section"
+                                     style="width: {{ information.python }}%" aria-valuenow="{{ information.python }}"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-2"><span>Django</span>
+                            <div class="progress my-1">
+                                <div class="progress-bar bg-primary" role="progressbar" data-aos="fade-right"
+                                     data-aos-delay="1500" data-aos-anchor=".skills-section"
+                                     style="width: {{ information.django }}%" aria-valuenow="{{ information.django }}"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-2"><span>Django Rest Framework</span>
+                            <div class="progress my-1">
+                                <div class="progress-bar bg-primary" role="progressbar" data-aos="fade-right"
+                                     data-aos-delay="1700" data-aos-anchor=".skills-section"
+                                     style="width: {{ information.drf }}%" aria-valuenow="{{ information.drf }}"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-2"><span>Databases</span>
+                            <div class="progress my-1">
+                                <div class="progress-bar bg-primary" role="progressbar" data-aos="fade-right"
+                                     data-aos-delay="1900" data-aos-anchor=".skills-section"
+                                     style="width: {{ information.database }}%"
+                                     aria-valuenow="{{ information.database }}" aria-valuemin="0"
+                                     aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-2"><span>Git</span>
+                            <div class="progress my-1">
+                                <div class="progress-bar bg-primary" role="progressbar" data-aos="fade-right"
+                                     data-aos-delay="2100" data-aos-anchor=".skills-section"
+                                     style="width: {{ information.git }}%" aria-valuenow="{{ information.git }}"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-2"><span>Docker</span>
+                            <div class="progress my-1">
+                                <div class="progress-bar bg-primary" role="progressbar" data-aos="fade-right"
+                                     data-aos-delay="2300" data-aos-anchor=".skills-section"
+                                     style="width: {{ information.docker }}%" aria-valuenow="{{ information.docker }}"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="d-print-none"/>
+            <div class="work-experience-section px-3 px-lg-4">
+                <h2 class="h3 mb-4" data-aos="fade" data-aos-delay="100">Work Experiences</h2>
+                <div class="timeline">
+                    {% for each in experiences %}
+                        <div class="timeline-card timeline-card-primary card shadow-sm" data-aos="fade-up"
+                             data-aos-delay="100">
+                            <div class="card-body">
+                                <div class="h5 mb-1">{{ each.title }}<span
+                                        class="text-muted h6"> at {{ each.company }}</span></div>
+                                <div class="text-muted text-small mb-2">{{ each.start_date|date:'M, Y' }} -
+                                    {% if each.end_date %} {{ each.end_date|date:'M, Y' }} {% else %}
+                                        {{ "Present" }} {% endif %}</div>
+                                <div>{{ each.description }}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <hr class="d-print-none"/>
+            <div class="education-section px-3 px-lg-4">
+                <h2 class="h3 mb-4" data-aos="fade" data-aos-delay="100">Educations</h2>
+                <div class="timeline">
+                    {% for each in educations %}
+                        <div class="timeline-card timeline-card-primary card shadow-sm" data-aos="fade-up"
+                             data-aos-delay="100">
+                            <div class="card-body">
+                                <div class="h5 mb-1">{{ each.title }} <span
+                                        class="text-muted h6">from {{ each.fromm }}</span></div>
+                                <div class="text-muted text-small mb-2">{{ each.start_date|date:'Y' }}
+                                    - {{ each.end_date|date:'Y' }}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <hr class="d-print-none"/>
+            <div class="contant-section px-3 px-lg-4 pb-4" id="contact" data-aos="fade" data-aos-delay="100">
+                <h2 class="h3 text mb-3">Contact Me</h2>
+                <div class="row">
+                    <div class="d-print-none">
+                    </div>
+                    <div class="col-md-5 offset-md-1" data-aos="fade" data-aos-delay="100">
+                        <div class="row mt-2">
+                            <div class="col-sm-4">
+                                <div class="pb-1">Email</div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="pb-1 text-secondary">{{ information.email }}</div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="pb-1">Gmail</div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="pb-1 text-secondary">{{ information.email2 }}</div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="pb-1">Phone</div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="pb-1 text-secondary">{{ information.phone }}</div>
+                            </div>
+                            {#                            <div class="col-sm-4">#}
+                            {#                                <div class="pb-1">Whatsapp</div>#}
+                            {#                            </div>#}
+                            {#                            <div class="col-sm-8">#}
+                            {#                                <div class="pb-1 text-secondary">{{ information.phone }}</div>#}
+                            {#                            </div>#}
+                            <div class="col-sm-4">
+                                <div class="pb-1">Address</div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="pb-1 text-secondary">{{ information.address }}</div>
+                            </div>
+                            <div class="container text-center text-lg-left">
+                                <div class="clearfix">
+                                    <nav role="navigation">
+                                        <ul class="nav justify-content-left">
+                                            <li class="nav-item"><a class="nav-link" href="{{ information.telegram }}"
+                                                                    title="Telegram"><i
+                                                    class="fab fa-telegram"></i><span class="menu-title sr-only">Telegram</span></a>
+                                            </li>
+                                            <li class="nav-item"><a class="nav-link" href="{{ information.linkedin }}"
+                                                                    title="Linkedin"><i
+                                                    class="fab fa-linkedin"></i><span class="menu-title sr-only">Linkedin</span></a>
+                                            </li>
+                                            {#                                            <li class="nav-item"><a class="nav-link" href="{{ information.instagram }}"#}
+                                            {#                                                                    title="Instagram"><i#}
+                                            {#                                                    class="fab fa-instagram"></i><span class="menu-title sr-only">Instagram</span></a>#}
+                                            {#                                            </li>#}
+                                            {#                                            <li class="nav-item"><a class="nav-link" href="{{ information.twitter }}"#}
+                                            {#                                                                    title="Twitter"><i class="fab fa-twitter"></i><span#}
+                                            {#                                                    class="menu-title sr-only">Twitter</span></a>#}
+                                            {#                                            </li>#}
+                                            <li class="nav-item"><a class="nav-link" href="{{ information.github }}"
+                                                                    title="Github"><i class="fab fa-github"></i><span
+                                                    class="menu-title sr-only">Github</span></a>
+                                            </li>
+                                            {#                                            <li class="nav-item"><a class="nav-link" href="{{ information.gitlab }}"#}
+                                            {#                                                                    title="Gitlab"><i class="fab fa-gitlab"></i><span#}
+                                            {#                                                    class="menu-title sr-only">Gitlab</span></a>#}
+                                            {#                                            </li>#}
+                                            {#                                            <li class="nav-item"><a class="nav-link"#}
+                                            {#                                                                    href="{{ information.stackoverflow }}"#}
+                                            {#                                                                    title="StackOverFlow"><i#}
+                                            {#                                                    class="fab fa-stack-overflow"></i>#}
+                                            {#                                                <span class="menu-title sr-only">StackOverFlow</span></a>#}
+                                            {#                                            </li>#}
+                                            {#                                            <li class="nav-item"><a class="nav-link"#}
+                                            {#                                                                    href="{{ information.discord }}"#}
+                                            {#                                                                    title="Discord"><i#}
+                                            {#                                                    class="fab fa-discord"></i><span#}
+                                            {#                                                    class="menu-title sr-only">Discord</span></a>#}
+                                            {#                                            </li>#}
+                                            {#                                            <li class="nav-item"><a class="nav-link"#}
+                                            {#                                                                    href="{{ information.reddit }}"#}
+                                            {#                                                                    title="Reddit"><i#}
+                                            {#                                                    class="fab fa-reddit"></i><span#}
+                                            {#                                                    class="menu-title sr-only">Reddit</span></a>#}
+                                            {#                                            </li>#}
+                                            {#                                            <li class="nav-item"><a class="nav-link"#}
+                                            {#                                                                    href="{{ information.quora }}"#}
+                                            {#                                                                    title="Quora"><i#}
+                                            {#                                                    class="fab fa-quora"></i><span#}
+                                            {#                                                    class="menu-title sr-only">Quora</span></a>#}
+                                            {#                                            </li>#}
+                                            <li class="nav-item"><a class="nav-link"
+                                                                    href="{{ information.leetcode }}"
+                                                                    title="Leetcode"><i
+                                                    class="fab fa-hacker-news"></i><span
+                                                    class="menu-title sr-only">LeetCode</span></a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="d-print-none">
+            <div class="container text-center text-lg-left">
+                <div class="py-2 clearfix">
+                </div>
+            </div>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src={% static "scripts/bootstrap.bundle.min.js" %}></script>
+        <script src={% static "scripts/aos.js" %}></script>
+        <script src={% static "scripts/main.js" %}></script>
+    </div>
+</div>
+</body>
+</html>
